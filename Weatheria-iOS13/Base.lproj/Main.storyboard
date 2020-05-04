@@ -18,13 +18,47 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dBX-3G-YgV">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xis-Sk-3eN">
+                                <rect key="frame" x="20" y="64" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG6-pg-QgG">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="RWJ-ml-xzG"/>
+                                            <constraint firstAttribute="height" constant="40" id="sgN-9G-RaJ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="location.fill" catalog="system"/>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a city name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLa-Yb-3ds">
+                                        <rect key="frame" x="45" y="0.0" width="284" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="search"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="amc-Aa-fdX">
+                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7eG-Kl-O3T"/>
+                                            <constraint firstAttribute="width" constant="40" id="8wq-Jw-DQ3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="magnifyingglass" catalog="system"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="dBX-3G-YgV" secondAttribute="bottom" id="DQ6-b2-fgY"/>
                             <constraint firstAttribute="trailing" secondItem="dBX-3G-YgV" secondAttribute="trailing" id="TzT-tF-3dd"/>
+                            <constraint firstItem="xis-Sk-3eN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VwK-JE-EW2"/>
                             <constraint firstItem="dBX-3G-YgV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ifI-TV-iXy"/>
+                            <constraint firstItem="xis-Sk-3eN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="itU-fs-0hR"/>
                             <constraint firstItem="dBX-3G-YgV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mWj-MJ-qnN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xis-Sk-3eN" secondAttribute="trailing" constant="20" id="wt5-2k-2LI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -36,5 +70,7 @@
     </scenes>
     <resources>
         <image name="background" width="950" height="600.33331298828125"/>
+        <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
     </resources>
 </document>
