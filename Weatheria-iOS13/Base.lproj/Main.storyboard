@@ -14,13 +14,27 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="dBX-3G-YgV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="dBX-3G-YgV" secondAttribute="bottom" id="DQ6-b2-fgY"/>
+                            <constraint firstAttribute="trailing" secondItem="dBX-3G-YgV" secondAttribute="trailing" id="TzT-tF-3dd"/>
+                            <constraint firstItem="dBX-3G-YgV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ifI-TV-iXy"/>
+                            <constraint firstItem="dBX-3G-YgV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mWj-MJ-qnN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="127"/>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="950" height="600.33331298828125"/>
+    </resources>
 </document>
