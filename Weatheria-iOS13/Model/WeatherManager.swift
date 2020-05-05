@@ -10,6 +10,7 @@ import Foundation
 
 struct WeatherManager {
     
+    var delegate: WeatherManagerDelegate?
     let appId = "ad3c29f34a50ed3cc67d6149fbffd87d"
     let apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric"
     
@@ -27,12 +28,12 @@ struct WeatherManager {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { (data, response, error) in
             if error != nil {
-                print(error!)
+                self.delegate?.didError(error!)
                 return
             }
             if let safeData = data {
                 if let weatherModel = self.parseJSON(safeData) {
-                    print(weatherModel)
+                    self.delegate?.didUpdateWeather(self, weatherModel: weatherModel)
                 }
             }
         }

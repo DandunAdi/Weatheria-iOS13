@@ -16,12 +16,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityName: UILabel!
     
-    let weatherManager = WeatherManager()
+    var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        weatherManager.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
@@ -55,5 +56,26 @@ extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
+    
+}
+
+
+//MARK: - WeatherManagerDelegate
+
+extension ViewController: WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weatherModel: WeatherModel) {
+        
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = weatherModel.temperatureString
+            self.cityName.text = weatherModel.cityName
+            self.weatherIcon.image = UIImage(systemName: weatherModel.weatherIconData)
+        }
+        
+    }
+    
+    func didError(_ error: Error) {
+        print(error)
+    }
+    
     
 }
