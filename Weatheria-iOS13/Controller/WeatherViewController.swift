@@ -85,6 +85,11 @@ extension WeatherViewController: WeatherManagerDelegate {
 extension WeatherViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        //Stop fetching data if user didn't type anyting in searchTextField
+        guard searchTextField.text != "" else {
+            return
+        }
+        
         if var cityName = searchTextField.text {
             //API url can't fetch data from city that contain spaces
             cityName = cityName.replacingOccurrences(of: " ", with: "+")
