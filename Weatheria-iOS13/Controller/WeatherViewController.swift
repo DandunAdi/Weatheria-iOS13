@@ -31,6 +31,8 @@ class WeatherViewController: UIViewController {
         temperatureLabel.text = "-"
         cityName.text = "Loading.."
         
+        self.dismissKey()
+        
     }
 
     @IBAction func locationButtonPressed(_ sender: UIButton) {
@@ -102,3 +104,20 @@ extension WeatherViewController: UITextFieldDelegate {
     }
     
 }
+
+
+//MARK: - Dismiss keyboard when user tap outside UITextField
+
+extension WeatherViewController {
+    
+    func dismissKey() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target: self, action: #selector(WeatherViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        searchTextField.endEditing(true)
+    }
+}
+
