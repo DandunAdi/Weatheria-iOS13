@@ -80,7 +80,10 @@ extension ViewController: WeatherManagerDelegate {
 extension ViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let cityName = searchTextField.text {
+        if var cityName = searchTextField.text {
+            //API url can't fetch data from city that contain spaces
+            cityName = cityName.replacingOccurrences(of: " ", with: "+")
+            
             weatherManager.fetchURL(by: cityName)
         }
         searchTextField.text = ""
