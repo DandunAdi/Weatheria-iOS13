@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         weatherManager.delegate = self
         locationManager.delegate = self
+        searchTextField.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
@@ -32,10 +33,6 @@ class ViewController: UIViewController {
     @IBAction func locationButtonPressed(_ sender: UIButton) {
         // Get weather data based on current user's location
         locationManager.requestLocation()
-    }
-    
-    @IBAction func searchButtonPressed(_ sender: Any) {
-        // Get weather data from searchTextField
     }
     
 }
@@ -76,6 +73,26 @@ extension ViewController: WeatherManagerDelegate {
     func didError(_ error: Error) {
         print(error)
     }
+}
+
+//MARK: - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate {
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let cityName = searchTextField.text {
+            weatherManager.fetchURL(by: cityName)
+        }
+        searchTextField.text = ""
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTextField.endEditing(true)
+        return true
+    }
+    
+    @IBAction func searchButtonPressed(_ sender: Any) {
+        searchTextField.endEditing(true)
+    }
     
 }

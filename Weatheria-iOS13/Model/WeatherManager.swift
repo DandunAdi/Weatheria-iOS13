@@ -19,6 +19,11 @@ struct WeatherManager {
         getWeatherObject(from: urlString)
     }
     
+    func fetchURL(by cityName: String) {
+        let urlString = "\(apiUrl)&appid=\(appId)&q=\(cityName)"
+        getWeatherObject(from: urlString)
+    }
+    
     func getWeatherObject(from urlString: String) {
         
         guard let url = URL(string: urlString) else {
