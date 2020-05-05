@@ -28,6 +28,9 @@ class WeatherViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         
+        temperatureLabel.text = "-"
+        cityName.text = "Loading.."
+        
     }
 
     @IBAction func locationButtonPressed(_ sender: UIButton) {
