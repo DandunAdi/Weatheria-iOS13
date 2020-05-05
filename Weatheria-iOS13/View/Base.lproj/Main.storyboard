@@ -29,6 +29,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="location.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jkJ-7M-QbV"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type a city name" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GLa-Yb-3ds">
                                         <rect key="frame" x="45" y="0.0" width="284" height="40"/>
@@ -46,6 +49,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5L7-Tf-QAl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -98,6 +104,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cityName" destination="oha-NN-a6q" id="UdP-8O-smV"/>
+                        <outlet property="searchTextField" destination="GLa-Yb-3ds" id="ZPw-b1-mVt"/>
+                        <outlet property="temperatureLabel" destination="uYo-Pq-gVF" id="ape-Rg-7Ra"/>
+                        <outlet property="weatherIcon" destination="IaB-Wt-dZu" id="8I0-QG-9sf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
