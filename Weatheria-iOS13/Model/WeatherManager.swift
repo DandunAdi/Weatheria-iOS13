@@ -20,8 +20,15 @@ struct WeatherManager {
     }
     
     func fetchURL(by cityName: String) {
+        
+        //Stop fetching data if user didn't type anyting in searchTextField
+        guard cityName != "" else {
+            return
+        }
+        
         let urlString = "\(apiUrl)&appid=\(appId)&q=\(cityName)"
         getWeatherObject(from: urlString)
+        
     }
     
     func getWeatherObject(from urlString: String) {
