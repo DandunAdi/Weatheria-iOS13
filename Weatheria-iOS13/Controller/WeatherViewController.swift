@@ -15,6 +15,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityName: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -30,6 +31,7 @@ class WeatherViewController: UIViewController {
         
         temperatureLabel.text = "-"
         cityName.text = "Loading.."
+        weatherDescriptionLabel.text = ""
         
         self.dismissKey()
         
@@ -71,6 +73,7 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.temperatureLabel.text = weatherModel.temperatureString
             self.cityName.text = weatherModel.cityName
             self.weatherIcon.image = UIImage(systemName: weatherModel.weatherIconData)
+            self.weatherDescriptionLabel.text = weatherModel.weatherDescription.capitalized
         }
         
     }

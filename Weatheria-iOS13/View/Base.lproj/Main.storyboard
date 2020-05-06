@@ -80,27 +80,36 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tokyo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="35" translatesAutoresizingMaskIntoConstraints="NO" id="oha-NN-a6q">
-                                <rect key="frame" x="20" y="352" width="168.33333333333334" height="82.666666666666686"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tokyo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="oha-NN-a6q">
+                                <rect key="frame" x="20" y="352" width="374" height="82.666666666666686"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="70"/>
+                                <color key="textColor" red="0.074186258020000007" green="0.1496702731" blue="0.190941155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Sky" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fxa-KZ-GKb">
+                                <rect key="frame" x="20" y="435" width="374" height="28.333333333333314"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.074186258020000007" green="0.1496702731" blue="0.190941155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="oha-NN-a6q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6Hf-bI-a8T"/>
                             <constraint firstAttribute="bottom" secondItem="dBX-3G-YgV" secondAttribute="bottom" id="DQ6-b2-fgY"/>
+                            <constraint firstItem="oha-NN-a6q" firstAttribute="top" secondItem="xis-Sk-3eN" secondAttribute="bottom" constant="248" id="Dwp-Ly-4xx"/>
                             <constraint firstItem="wHY-FB-03I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="K5c-Vs-oBD"/>
                             <constraint firstAttribute="trailing" secondItem="dBX-3G-YgV" secondAttribute="trailing" id="TzT-tF-3dd"/>
+                            <constraint firstItem="Fxa-KZ-GKb" firstAttribute="top" secondItem="oha-NN-a6q" secondAttribute="bottom" constant="0.33000000000000002" id="UgY-Mr-dro"/>
                             <constraint firstItem="xis-Sk-3eN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="VwK-JE-EW2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fxa-KZ-GKb" secondAttribute="trailing" constant="20" id="XhT-Og-INx"/>
+                            <constraint firstItem="Fxa-KZ-GKb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eJz-qb-nIU"/>
+                            <constraint firstItem="oha-NN-a6q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i37-yd-HDd"/>
                             <constraint firstItem="dBX-3G-YgV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ifI-TV-iXy"/>
                             <constraint firstItem="xis-Sk-3eN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="itU-fs-0hR"/>
                             <constraint firstItem="wHY-FB-03I" firstAttribute="top" secondItem="xis-Sk-3eN" secondAttribute="bottom" constant="105" id="jIH-jt-J9e"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oha-NN-a6q" secondAttribute="trailing" constant="20" id="kIP-eU-q91"/>
                             <constraint firstItem="dBX-3G-YgV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mWj-MJ-qnN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xis-Sk-3eN" secondAttribute="trailing" constant="20" id="wt5-2k-2LI"/>
-                            <constraint firstItem="oha-NN-a6q" firstAttribute="top" secondItem="xis-Sk-3eN" secondAttribute="bottom" constant="248" id="x1Y-jY-dJV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oha-NN-a6q" secondAttribute="trailing" symbolic="YES" id="zmG-ts-tHn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -108,6 +117,7 @@
                         <outlet property="cityName" destination="oha-NN-a6q" id="UdP-8O-smV"/>
                         <outlet property="searchTextField" destination="GLa-Yb-3ds" id="ZPw-b1-mVt"/>
                         <outlet property="temperatureLabel" destination="uYo-Pq-gVF" id="ape-Rg-7Ra"/>
+                        <outlet property="weatherDescriptionLabel" destination="Fxa-KZ-GKb" id="won-iF-AtM"/>
                         <outlet property="weatherIcon" destination="IaB-Wt-dZu" id="8I0-QG-9sf"/>
                     </connections>
                 </viewController>
